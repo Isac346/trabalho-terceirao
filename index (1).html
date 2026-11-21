@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>[SEU NOME] – Memórias e Redações</title>
+  <meta name="description" content="Memórias escolares e portfólio de redações de [SEU NOME], formando de [ANO].">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bagel+Fat+One&family=Nunito:wght@400;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <div id="lapis" aria-hidden="true"></div>
+  <header class="topo">
+    <a class="marca" href="#inicio">✏️ [SEU NOME]</a>
+    <nav aria-label="Principal">
+      <a href="#memorias">Memórias</a>
+      <a href="#redacoes">Redações</a>
+      <a href="#quiz-sec">Quiz</a>
+    </nav>
+  </header>
+
+  <main>
+    <section id="inicio" class="hero">
+      <span class="fig" style="left:6%;top:14%">📚</span>
+      <span class="fig" style="left:44%;top:10%">⭐</span>
+      <span class="fig" style="left:90%;top:20%">🎓</span>
+      <span class="fig" style="left:52%;top:84%">✏️</span>
+      <span class="fig" style="left:4%;top:80%">🏆</span>
+
+      <div class="hero-txt">
+        <p class="selo">Turma de [ANO]</p>
+        <h1 id="nome">[SEU NOME]</h1>
+        <p class="sub">[NOME DA ESCOLA] – 3º ano do Ensino Médio</p>
+        <p class="digita">Eu sou <span id="digita"></span><i class="cursor"></i></p>
+        <p class="rotulo-contagem">Falta pouco para a formatura:</p>
+        <div id="contagem" class="contagem"></div>
+        <button type="button" id="festa" class="btn">🎉 Comemorar</button>
+        <p class="dica">Dica: arraste as figurinhas e passe o mouse sobre o meu nome.</p>
+      </div>
+
+      <div class="retrato">
+        <img src="assets/img/perfil/perfil.jpg" alt="Foto de [SEU NOME]" onerror="this.parentElement.classList.add('sem-foto')">
+        <span>Coloque sua foto em<br>assets/img/perfil/perfil.jpg</span>
+      </div>
+    </section>
+
+    <section id="memorias" class="secao">
+      <h2>Minha trilha escolar</h2>
+      <p class="intro">[Apresentação curta. Clique em cada estação para viajar do Jardim de Infância até a formatura.]</p>
+      <div id="estacoes" class="estacoes"></div>
+      <div id="painel" class="painel" aria-live="polite"></div>
+    </section>
+
+    <section id="redacoes" class="secao">
+      <h2>Portfólio de redações</h2>
+      <p class="intro">[Apresentação curta. São 17 textos das aulas de Língua Portuguesa e Redação. Clique para ler, marque as favoritas ♥ ou sorteie uma.]</p>
+      <div class="barra">
+        <input id="busca" type="search" placeholder="Buscar por título ou tema" aria-label="Buscar redação">
+        <button type="button" id="sorteio" class="btn">🎲 Sortear uma redação</button>
+      </div>
+      <div id="grade" class="grade"></div>
+    </section>
+
+    <section id="quiz-sec" class="secao">
+      <h2>Você me conhece?</h2>
+      <p class="intro">[Acerte tudo e ganhe uma chuva de confete.]</p>
+      <div id="quiz" class="quiz"></div>
+    </section>
+  </main>
+
+  <footer class="rodape">
+    <p>[SEU NOME] – [NOME DA ESCOLA] – [ANO]</p>
+    <p>[Mensagem final / agradecimentos]</p>
+  </footer>
+
+  <dialog id="leitor" aria-labelledby="leitor-titulo">
+    <header>
+      <div><h3 id="leitor-titulo"></h3><p id="leitor-meta"></p></div>
+      <button type="button" data-fechar aria-label="Fechar">✕</button>
+    </header>
+    <div class="ferramentas">
+      <button type="button" id="menos" aria-label="Diminuir letra">A−</button>
+      <button type="button" id="mais" aria-label="Aumentar letra">A+</button>
+      <button type="button" id="fav" aria-pressed="false">♡ Favoritar</button>
+    </div>
+    <div id="leitor-texto" class="texto-redacao"></div>
+    <footer>
+      <button type="button" id="anterior">← Anterior</button>
+      <span id="posicao"></span>
+      <button type="button" id="proxima">Próxima →</button>
+    </footer>
+  </dialog>
+
+  <dialog id="foto" class="lightbox">
+    <button type="button" data-fechar aria-label="Fechar foto">✕</button>
+    <img id="foto-img" alt="">
+    <p id="foto-leg"></p>
+  </dialog>
+
+  <script src="js/script.js"></script>
+</body>
+</html>
